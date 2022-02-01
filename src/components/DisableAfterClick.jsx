@@ -8,7 +8,7 @@ function DisableAfterClick({saveSuggestion, id}) {
   className="btn"
    onClick={() => saveSuggestion(id)}
 >
-  <FcLike size = '50'/>
+  <FcLike size = '90'/>
 </button></>;
 }
 

@@ -20,6 +20,7 @@ function App() {
       interests: "Soccer, jokes",
       saved: false,
       interested: true,
+      number: "442-242-5195",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ function App() {
       interests: "Martial arts, beets",
       saved: false,
       interested: true,
+      number: "443-820-7732",
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ function App() {
       interests: "Chocolate cake, wine, crossword puzzles",
       saved: false,
       interested: true,
+      number: "251-417-5567",
     },
     {
       id: 4,
@@ -50,6 +53,7 @@ function App() {
       interests: "Scarecrows, bedtime stories",
       saved: false,
       interested: true,
+      number: "704-208-0386",
     },
     {
       id: 5,
@@ -60,6 +64,7 @@ function App() {
       interests: "Jokes, ladies",
       saved: false,
       interested: true,
+      number: "309-405-7570",
     },
     {
       id: 6,
@@ -70,6 +75,7 @@ function App() {
       interests: "Suits, cocktails",
       saved: false,
       interested: true,
+      number: "662-470-8004",
     },
     {
       id: 7,
@@ -80,6 +86,7 @@ function App() {
       interests: "Pam, surfing",
       saved: false,
       interested: true,
+      number: "843-597-5195",
     },
   ]);
 function refreshSaved(){
@@ -131,7 +138,7 @@ function refreshSuggestions(){
     <Routes>
       <Route
         path="/"
-        element={<Suggestions suggestions={suggestions} saveSuggestion={saveSuggestion} removeSuggestion2={removeSuggestion2} disable={disable}/>}
+        element={<Suggestions suggestions={suggestions} saveSuggestion={saveSuggestion} removeSuggestion2={removeSuggestion2}/>}
       />
        <Route path="/saved" element={<Saved suggestions={savedSuggestions}  removeSuggestion={removeSuggestion}/>} />
     </Routes>   

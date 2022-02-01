@@ -29,8 +29,8 @@
 }
 
 .post-text {
-  font-size: 40px;
-  width: 40%;
+  font-size: 20px;
+  width: 500px;
 }
 @keyframes App-logo-spin {
   from {
@@ -174,10 +174,14 @@ body {
   padding: 55px 45px 0px 45px;
 }
 
+.buttons{
+  
+  margin-top: 200px;
+}
 .post .caption {
   float: left;
-  width: 100%;
-  text-align: left;
+  margin-left: 120px;
+  text-align: center;
   padding: 25px 25px;
 }
 
@@ -638,20 +642,22 @@ blockquote {
 }
 
 .vt-post.post .caption {
-  padding: 25px 0px;
+  padding-left: 250px;
 }
 
 .post .caption h3 {
   margin: 0px 0px 20px 0px;
   color: #36a0e7;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 34px;
   line-height: 42px;
+  max-width: 400px;
 }
 .md-heading {
-  font-size: 24px !important;
+  font-size: 70px !important;
   line-height: 36px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 100px !important;
+  text-align: center;
 }
 
 .navBar {
@@ -679,11 +685,11 @@ blockquote {
 }
 
 
-.btn{
+.buttons{
   margin-top: 200px;
 }
-.btn2{
-  margin-top: 200px;
+.button{
+  margin-top: 150px;
 }
 .row {
   display: flex;
@@ -691,15 +697,35 @@ blockquote {
   align-items: center;
 }
 .caption {
-  margin-left: 100%;
+  margin-top: 250px;
+  padding-right: 300px;
   display: block;
   text-align: center;
 }
 .caption h1{
-  font-size: 50px;
+  font-size: 100px;
 }
 
 .caption2 {
-  margin-left: 20%;
+  margin-top: 110px;
+  margin-left: 320px;
+  display: block;
   text-align: center;
+}
+
+.caption2 h1{
+  font-size: larger;
+}
+
+.caption2 h3{
+  font-size: 30px;
+  color: #36a0e7;
+}
+
+.caption2 p{
+font-weight: bold;
+color: #216390;
+}
+.caption2 h2{
+  color: #982433;
 }

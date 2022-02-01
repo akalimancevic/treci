@@ -5,13 +5,7 @@ import DisableAfterClick from "./DisableAfterClick";
 
 
 
-function Suggestion({suggestion, saveSuggestion, removeSuggestion, removeSuggestion2, isSaved, disable}) {
-   
-    
-    function disableButton(){
-        saveSuggestion(suggestion.id);
-        
-    }
+function Suggestion({suggestion, saveSuggestion, removeSuggestion, removeSuggestion2, isSaved}) {
   return( 
     <div className="container">
     <div className="col-md-12 col-lg-12">
@@ -28,23 +22,23 @@ function Suggestion({suggestion, saveSuggestion, removeSuggestion, removeSuggest
     <h1 className="md-heading">{suggestion.name}</h1>
     <h3>Interests: {suggestion.interests}</h3>
     <div className="buttons">
-        <DisableAfterClick saveSuggestion={saveSuggestion} id={suggestion.id} disable={disable}/>
+        <DisableAfterClick saveSuggestion={saveSuggestion} id={suggestion.id}/>
           <button className="btn"
             onClick={() => removeSuggestion2(suggestion.id)}
         >
-            <FcDislike size = '50' />
+            <FcDislike size = '90' />
           </button>
           </div>
     </div>) : (
     <div className="caption2">
     <h1 className="md-heading">{suggestion.name}</h1>
-    <h3>Interests: {suggestion.interests}</h3>
-    <p className="post-text">{suggestion.about}</p>
-
-    <button className="btn2"
+    <h3>Interests: {suggestion.interests}</h3><br></br>
+    <p className="post-text">{suggestion.about}</p><br></br>
+    <h2>Phone number: {suggestion.number}</h2>
+    <button className="button"
             onClick={() => removeSuggestion(suggestion.id)}
         >
-            <FcDislike size = '50' />
+            <FcDislike size = '90' />
           </button>
         
     </div>)}
