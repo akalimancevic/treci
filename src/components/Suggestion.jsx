@@ -1,34 +1,50 @@
 import React from "react";
-import { BsEmojiHeartEyes } from "react-icons/bs";
-import { FaRegMehRollingEyes } from "react-icons/fa";
+import { FcLike } from "react-icons/fc";
+import { FcDislike } from "react-icons/fc";
 
 
 
 function Suggestion({suggestion, saveSuggestion, removeSuggestion, isSaved}) {
-  return <div className={isSaved=== 1? "post" : "savedpost"}>
+  return( 
+    <article class="post vt-post">
+    <div class="row">
+  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+  <div className="post-type post-img">
 <img src={suggestion.photo}
-alt="slika"/>
-<div className="card-body">
-    <h3 className="card-title">{suggestion.name}</h3>
-    <p className="card-text">{suggestion.about}</p>
+alt="slika"/></div> </div>
+ <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+<div className="caption">
+    <h1 className="md-heading">{suggestion.name}</h1>
+    <h3>Interests: {suggestion.interests}</h3>
+
+</div>
 </div>
 {isSaved === 1 ? (
-        <>
+         <div class="author-info author-info-2">
           <button
-            className="btn"
+            class="btn btn-default"
             onClick={() => saveSuggestion(suggestion.id)}
           >
-            <BsEmojiHeartEyes/>
+            <FcLike/>
           </button>
-        </>
-      ) : (
-            <button className="btn"
+          </div>
+          ) : (
+            <div class="author-info author-info-2">
+              
+              <p className="post-text">{suggestion.about}</p>
+          <button class="btn btn-default"
             onClick={() => removeSuggestion(suggestion.id)}
         >
-            <FaRegMehRollingEyes />
+            <FcDislike />
           </button>
-      )}
-</div>;
+        
+        </div>
+        
+        )}
+       
+</div>
+</article>
+);
 }
 
 export default Suggestion;

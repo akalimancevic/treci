@@ -6,7 +6,7 @@ import Messages from "./components/Messages";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//<img src={logo} className="App-logo" alt="logo" />
+
 function App() {
   const [savedSuggestions, setSavedSuggestions] = useState([]);
   const [suggestions] = useState([
@@ -31,7 +31,7 @@ function App() {
     {
       id: 3,
       name: "Stanley",
-      photo: "https://static.wikia.nocookie.net/theoffice/images/2/23/Stanley_Hudson.jpg/revision/latest?cb=20170701085445",
+      photo: "https://www.indiewire.com/wp-content/uploads/2020/07/Screen-Shot-2020-07-06-at-10.39.06-AM.png",
       about:
         "I am a fairly successful salesman, I am serious and hard-working. I like spending my evening at home, drinking wine and doing crossword puzzles",
       interests: "Chocolate cake, wine, crossword puzzles",
@@ -75,13 +75,14 @@ function App() {
     },
   ]);
 function refreshSaved(){
-  let suggs = suggestions.filter((post)=> post.saved=true);
+  let suggs = suggestions.filter((post)=> post.saved===true);
   setSavedSuggestions(suggs);
 }
 function saveSuggestion(id){
   suggestions.forEach((post) => {
     if (post.id === id) {
       post.saved=true;
+      console.log("id:", post.id, "saved:", post.saved);
     }
   });
   refreshSaved();
@@ -90,6 +91,7 @@ function removeSuggestion(id){
   suggestions.forEach((post) => {
     if (post.id === id) {
       post.saved=false;
+      console.log("id:", post.id, "saved:", post.saved);
     }
   });
     refreshSaved();
@@ -100,14 +102,14 @@ function removeSuggestion(id){
     <Routes>
       <Route
         path="/"
-        element={<Suggestions suggestions={suggestions} saveSuggestion={saveSuggestion} removeSuggestion={removeSuggestion}/>}
+        element={<Suggestions suggestions={suggestions} saveSuggestion={saveSuggestion}/>}
       />
-      <Route path="/saved" element={<Saved suggestions={savedSuggestions} />} />
-    </Routes>
-    <Route
+       <Route path="/saved" element={<Saved suggestions={savedSuggestions}  removeSuggestion={removeSuggestion}/>} />
+       <Route
         path="/messages"
         element={<Messages/>}
       />
+    </Routes>   
   </BrowserRouter>
   );
 }
